@@ -169,16 +169,29 @@
                 </h3>
             </div>
             <p>
-                Microsoft has released the production version of .NET 7, the latest version of its cross-platform,
-                open-source software development platform. This update brings a number of enhancements including
-                performance improvements, C# language upgrades, and cloud-native, container-based development
-                capabilities. The key themes of this release include enabling developers to write performant web APIs,
-                building cloud-native applications, and deploying them across Linux. Additionally, developer
-                productivity and containerization of projects are emphasized, along with setting up CI/CD workflows in
-                GitHub actions. Available for Windows, Linux, and macOS, .NET 7 is the third major release in
-                Microsoft’s .NET unification journey, which allows developers to learn once and reuse skills with one
-                SDK, one runtime, and one set of base libraries to build all kinds of applications including cloud, web,
-                desktop, mobile, artificial intelligence, and IoT.
+                Microsoft has recently released the production version of .NET 7, the latest version of its
+                cross-platform, open-source software development platform. With this update, developers can now take
+                advantage of a number of enhancements including performance improvements, C# language upgrades, and
+                cloud-native, container-based development capabilities.
+            </p>
+
+            <p>
+                One of the key themes of this release is enabling developers to write performant web APIs. This will
+                allow developers to build cloud-native applications and deploy them across Linux. Additionally,
+                Microsoft is emphasizing developer productivity and containerization of projects, making it easier for
+                developers to set up CI/CD workflows in GitHub actions.
+            </p>
+
+            <p>
+                Available for Windows, Linux, and macOS, .NET 7 is the third major release in Microsoft’s .NET
+                unification journey. This allows developers to learn once and reuse skills with one SDK, one runtime,
+                and one set of base libraries to build all kinds of applications including cloud, web, desktop, mobile,
+                artificial intelligence, and IoT.
+            </p>
+
+            <p>
+                Overall, the release of .NET 7 offers a number of significant enhancements and improvements for
+                developers, making it an exciting new option for building and deploying cross-platform applications.
             </p>
 
             <div class="text-component__block text-component__block--outset">
@@ -188,7 +201,32 @@
             </div>
 
             <p>
-                TODO
+                .Net 7 includes these features:
+
+            </p>
+
+            <ul class="yx-npq yx-nde">
+                <li>Continued performance improvements.</li>
+                <li>One BCL (base class library).</li>
+                <li>Native support for ARM64 systems.</li>
+                <li>Enhanced .NET support on Linux.</li>
+                <li>HTTP/3 and improvements to minimal APIs for cloud-native apps.</li>
+                <li>Native AOT for console applications.</li>
+                <li> The F# 7 functional language features continued work on reliability and support for existing
+                    features.
+                </li>
+            </ul>
+
+            <p>
+                .NET 7 is being released in conjunction with ASP.NET Core 7 and Entity Framework Core 7, as well as .NET
+                MAUI (Multi-platform App UI), Windows Forms, Windows Presentation Foundation, and the Orleans 7
+                framework for building distributed applications.
+            </p>
+
+            <p>
+                For the Blazor web apps development tool, meanwhile,
+                .NET 7 improves the WebAssembly debugging experience and supports the handling of location change
+                events.
             </p>
 
             <div class="text-component__block text-component__block--outset">
@@ -240,7 +278,43 @@
             </div>
 
             <p>
-                TODO
+                Migrating from .NET 6 to 7 requires upgrading to Visual Studio Code 2022 and updating the .NET Core SDK
+                version in the global.json file. For example, if your global.json file currently has this line:
+                "version": "6.0.200" it should be updated to: "version": "7.0.100".
+            </p>
+
+            <p>
+                The next step is to update the Target Framework (TFM) to .NET 7.0 in the project file. For example, if
+                your project file currently has this line:
+                <code>
+                    <TargetFramework>net6.0</TargetFramework>
+                </code>
+                , it should be updated to:
+                <code>
+                    <TargetFramework>net7.0</TargetFramework>
+                </code>
+                .
+            </p>
+            <p>
+                Finally, you will need to update all package references in the project file to version 7.*.* or later.
+                For example, if your project file currently has this line:
+                <PackageReference Include="Microsoft.AspNetCore.JsonPatch" Version="6.0.0"/>
+                , it should be updated to:
+                <PackageReference Include="Microsoft.AspNetCore.JsonPatch" Version="7.0.1"/>
+                .
+                This applies to all references to Microsoft.AspNetCore., Microsoft.EntityFrameworkCore.,
+                Microsoft.Extensions.*, and System.Net.Http.Json packages.
+            </p>
+
+            <p>
+                It's important to be aware that during the migration process, you may encounter package breaking changes
+                and breaking changes in the new version of .NET that may require additional work. This might include
+                rewriting certain parts of the code to address these breaking changes. However, with a thorough testing
+                and quality assurance process in place, these challenges can be mitigated and the benefits of upgrading
+                to the latest version of .NET can be fully realized.
+
+                Once these steps are completed, your application should be fully migrated to .NET 7 and ready to perform
+                its operations.
             </p>
 
             <div class="text-component__block text-component__block--outset">
@@ -250,8 +324,55 @@
             </div>
 
             <p>
-                TODO
+                When migrating from one version of .NET to another, it's important to have a solid plan in place to
+                ensure a smooth and successful migration. One of the first steps in this process is to thoroughly assess
+                the current codebase and identify any potential issues that may arise during the upgrade. This will help
+                you develop a comprehensive plan for the upgrade and minimize any potential delays or complications.
             </p>
+
+            <p>
+                A comprehensive plan should include testing and deployment strategies. Before starting the migration
+                process, it is important to test the code thoroughly, both before and after the upgrade. This will help
+                identify and resolve any issues that may arise during the migration process.
+            </p>
+
+            <p>
+                In addition to testing, it's important to use the latest tools and versions of the .NET framework. These
+                will have the most up-to-date features and performance improvements, and will help ensure that the
+                migration process runs smoothly.
+            </p>
+
+            <figure
+                    class="text-component__block text-component__block--outset text-component__block--right"
+            >
+                <img src="assets/img/release-schedule.png"
+                     alt="Image description here"/>
+                <figcaption>DotNet release schedule</figcaption>
+            </figure>
+
+            <p>
+                Another important consideration is the potential for breaking changes in the new version of .NET and in
+                packages you're using. It's important to be aware of these changes and plan accordingly, which may
+                require rewriting certain parts of the code to address these breaking changes.
+            </p>
+
+            <blockquote>
+                Before any migration, it is better to check the documentation of <a
+                    href="https://learn.microsoft.com/en-us/dotnet/core/compatibility/7.0" target="_blank">DotNet
+                breaking changes</a> and packages breaking changes.
+            </blockquote>
+
+            <p>
+                Investing in quality assurance is crucial for a successful migration. It ensures the application is
+                stable, secure, and performs well after the migration. Communication with the team and keeping them
+                informed of progress is also important, as well as working together to resolve any issues that may
+                arise.
+            </p>
+
+            <p>
+                By following these tips and best practices,
+                you can ensure a smooth and successful migration from one version of .NET to another.
+            <p>
 
             <div class="text-component__block text-component__block--outset">
                 <h3 class="yx-ht">
@@ -266,7 +387,22 @@
             </div>
 
             <p>
-                TODO
+                In our experience with our client, upgrading their application from an older version of .NET to the
+                latest version was a smooth process. The first step was to assess the current codebase and identify any
+                potential issues that might arise during the upgrade. We then developed a comprehensive plan for the
+                upgrade, including testing and deployment strategies.
+            </p>
+
+            <p>
+                The actual upgrade process was relatively
+                straightforward, as the majority of the code was able to be seamlessly ported to the new version. We did
+                encounter a few areas of the code that required some modification, but these were relatively minor and
+                easily resolved.
+            </p>
+
+            <p>
+                Overall, the upgrade was completed on time and within budget, and the client is now
+                able to take advantage of the latest features and performance improvements in the .NET framework.
             </p>
 
             <div class="text-component__block text-component__block--outset">
@@ -276,7 +412,23 @@
             </div>
 
             <p>
-                TODO
+                During the implementation of the .NET version upgrade, we faced a few challenges, but overall the
+                process was successful. One of the biggest challenges we faced was dealing with breaking changes in the
+                new version of the framework. These breaking changes often required us to rewrite certain parts of the
+                code, which added some additional time and effort to the upgrade process. However, we were able to
+                mitigate this by thoroughly testing the code before and after the upgrade, which helped us identify and
+                resolve any issues quickly.
+
+                On the other hand, the benefits of upgrading to the latest version of .NET were significant. The
+                client's application was able to take advantage of the latest features and performance improvements in
+                the framework, which has resulted in a faster, more stable and more secure application. Additionally,
+                the client's development team was able to start using new features and capabilities that were not
+                available in the previous version of the framework.
+
+                Overall, while the process of upgrading to a new version of .NET can be challenging, the benefits of
+                doing so far outweigh the challenges. With a thorough plan in place and a commitment to testing and
+                quality, it is possible to successfully upgrade an application to the latest version of the framework,
+                while delivering significant benefits to the client.
             </p>
 
             <div class="text-component__block text-component__block--outset">
@@ -305,91 +457,18 @@
                 </h3>
             </div>
 
-            <ul>
-                <li>
-                    <a href="https://learn.microsoft.com/en-us/dotnet/core/compatibility/7.0">Microsoft .NET 7 Breakchanges</a>
+            <p>
+                References used for this article:
+            </p>
+
+            <ul class="yx-npq yx-nde">
+                <li>Microsoft official migration documentation <a
+                        href="https://learn.microsoft.com/fr-fr/dotnet/architecture/modernize-desktop/example-migration"
+                        target="_blank">link</a></li>
+                <li>Microsoft official .Net 7 breaking changes <a
+                        href="https://learn.microsoft.com/en-us/dotnet/core/compatibility/7.0" target="_blank">link</a>
                 </li>
             </ul>
-
-            <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat
-                hic autem consequatur libero, impedit fugiat facere ex! Fugit,
-                cumque minus!
-            </p>
-            <figure class="text-component__block">
-                <img src="assets/img/dotnet7perf.png"
-                     alt="Image description here"/>
-                <figcaption>Unleashing the beast</figcaption>
-            </figure>
-            <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto odit
-                incidunt nobis cumque, assumenda quidem ducimus! Architecto,
-                molestias reiciendis tempora pariatur nobis nam quibusdam, nemo
-                repellendus rerum rem quam soluta.
-            </p>
-            <figure class="text-component__block text-component__block--left">
-                <img
-                        src="assets/img/article-img-2.jpg"
-                        alt="Image description here"
-                />
-                <figcaption>Image caption</figcaption>
-            </figure>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
-                incidunt minus vero deserunt illum perspiciatis sed sit. Officia,
-                quia at? Nisi dolores quis culpa nulla eveniet? Rem vel numquam ipsa
-                voluptatum voluptate illo minima, temporibus atque officia soluta
-                magnam laborum neque alias consequuntur enim aliquid consequatur non
-                accusamus exercitationem. Perspiciatis dolorem a commodi alias, ad
-                corporis iusto magnam in quae deleniti incidunt facilis
-                voluptatibus. Aliquid reprehenderit, provident, totam necessitatibus
-                cumque vel veniam consequuntur maxime iure accusamus explicabo
-                recusandae neque quas?
-            </p>
-            <figure
-                    class="text-component__block text-component__block--outset text-component__block--right"
-            >
-                <img src="assets/img/dotnet7perf.png"
-                     alt="Image description here"/>
-                <figcaption>Beast unleashed 🚀</figcaption>
-            </figure>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-                incidunt provident aspernatur quibusdam expedita soluta voluptas,
-                sapiente ipsa praesentium eum earum, modi necessitatibus a eveniet
-                quidem doloribus, sequi sed tenetur nesciunt consectetur totam
-                asperiores assumenda inventore porro. Enim beatae iure ullam
-                consequuntur, quibusdam similique quae doloribus delectus ipsa,
-                cumque odit voluptatem? Natus, dolorem quaerat! Magni fugit enim nam
-                quam beatae facilis, consequuntur sunt totam pariatur aperiam sequi
-                laboriosam similique dolores aspernatur alias consectetur maxime
-                voluptas, ut tempore. Ipsam vel, id repellat maiores non fuga unde
-                modi voluptates nam reiciendis blanditiis. At veniam odit illum
-                porro maiores magni quasi deserunt est?
-            </p>
-            <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos
-                vitae, sequi officia dignissimos laboriosam atque esse omnis.
-                Perspiciatis, ratione eius.
-            </p>
-            <div class="text-component__block text-component__block--outset">
-                <div class="yx-n gap-xs">
-                    <figure class="col">
-                        <img
-                                src="assets/img/article-img-4.jpg"
-                                alt="Image description here"
-                        />
-                        <figcaption>Image caption</figcaption>
-                    </figure>
-                    <figure class="col">
-                        <img
-                                src="assets/img/article-img-5.jpg"
-                                alt="Image description here"
-                        />
-                        <figcaption>Image caption</figcaption>
-                    </figure>
-                </div>
-            </div>
         </div>
     </div>
     <div class="yx-nmq yx-t max-width-adaptive-sm yx-sy" aria-hidden="true">
