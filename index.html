@@ -242,8 +242,108 @@
             </div>
 
             <p>
-                TODO
+                EF Core 7 is the successor to EF Core 6, and can be referred as EF7 for brevity.
+                EF7 contains many new features (167 enhancements and new features, both large and small, and 171 bug
+                fixes !)
             </p>
+
+            <ul class="yx-npq yx-nde">
+                <li>JSON Columns.</li>
+                <li>Bulk updates and deletes.</li>
+                <li>Faster SaveChanges.</li>
+                <li>Custom Database First templates (with T4 templates).</li>
+                <li>Stored procedure mapping for insert/update/delete.</li>
+                <li>New and improved interceptors and events.</li>
+            </ul>
+
+            <p>EF7 contains also a lot of smaller enhancements you can see <a
+                    href="https://devblogs.microsoft.com/dotnet/announcing-ef7/" target="_blank">here</a></p>
+            <p>
+                One of the major enhancements in EF Core 7 is the addition of JSON Columns, which allows for more
+                efficient storage and retrieval of JSON data. Additionally, bulk updates and deletes have been included,
+                making it easier to perform these operations on large sets of data.
+            <blockquote>
+                One of the most valuable new features in EF Core 7 for me personally is the ability to perform bulk
+                updates and deletes. This allows me to eliminate the need for additional libraries that perform similar
+                tasks and instead work with the standard functionality provided by EF Core 7.
+            </blockquote>
+            </p>
+
+            <p>
+                EF Core 7 also offers faster performance, with improvements to the SaveChanges method. Custom Database
+                First templates, using T4 templates, have also been introduced, allowing for greater flexibility in the
+                design of the database.
+            </p>
+
+            <p>
+                Another notable feature in EF Core 7 is the added support for stored procedure mapping for insert,
+                update, and delete operations. This allows for more granular control over how data is modified in the
+                database.
+            </p>
+
+            <p>
+                Finally, EF Core 7 includes new and improved interceptors and events, providing more opportunities for
+                developers to add custom logic and behavior to their applications.
+            </p>
+
+            <p>
+                Overall, EF Core 7 is a significant upgrade from its predecessor and offers a wide range of new and
+                improved features for developers to take advantage of. It's a must-have for anyone working with .NET and
+                databases.
+            </p>
+
+            <figure class="text-component__block">
+                <img src="assets/img/ef.png"
+                     alt="Image description here"/>
+                <figcaption>EF7</figcaption>
+            </figure>
+
+            <table>
+                <thead>
+                <tr>
+                    <th>Method</th>
+                    <th>EF Version</th>
+                    <th>Server</th>
+                    <th style="text-align: right;">Mean</th>
+                    <th style="text-align: right;">Error</th>
+                    <th style="text-align: right;">StdDev</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Insert_four_rows</td>
+                    <td>6.0</td>
+                    <td>Remote</td>
+                    <td style="text-align: right;">12.93 ms</td>
+                    <td style="text-align: right;">0.258 ms</td>
+                    <td style="text-align: right;">0.651 ms</td>
+                </tr>
+                <tr>
+                    <td>Insert_four_rows</td>
+                    <td>7.0</td>
+                    <td>Remote</td>
+                    <td style="text-align: right;">4.985 ms</td>
+                    <td style="text-align: right;">0.0981 ms</td>
+                    <td style="text-align: right;">0.1981 ms</td>
+                </tr>
+                <tr>
+                    <td>Insert_four_rows</td>
+                    <td>6.0</td>
+                    <td>Local</td>
+                    <td style="text-align: right;">1.679 ms</td>
+                    <td style="text-align: right;">0.0331 ms</td>
+                    <td style="text-align: right;">0.0368 ms</td>
+                </tr>
+                <tr>
+                    <td>Insert_four_rows</td>
+                    <td>7.0</td>
+                    <td>Local</td>
+                    <td style="text-align: right;">435.8 us</td>
+                    <td style="text-align: right;">7.85 us</td>
+                    <td style="text-align: right;">6.96 us</td>
+                </tr>
+                </tbody>
+            </table>
 
             <div class="text-component__block text-component__block--outset">
                 <h3 class="yx-ht">
@@ -252,7 +352,38 @@
             </div>
 
             <p>
-                TODO
+                In my experience as a .NET developer, one of the most important considerations when working with Entity
+                Framework Core (EF Core) is the number of transactions and roundtrips that occur when inserting or
+                updating data in the database. With the release of EF Core 7, this has become even more important, as
+                the framework has introduced new optimizations to reduce the number of roundtrips and transactions that
+                occur.
+            </p>
+
+            <p>
+                One such optimization is the removal of transactions when only a single statement is involved. In EF
+                Core 6, every SQL statement was wrapped in a transaction, which resulted in additional roundtrips to the
+                database. However, in EF Core 7, the framework recognizes that many databases guarantee transactionality
+                for single SQL statements and will remove the transaction in these cases.
+            </p>
+
+            <p>
+                To demonstrate the impact of this optimization, I benchmarked the performance of the same code using
+                both EF Core 6 and 7. The results showed a 25% improvement in performance with EF Core 7, thanks to the
+                reduction in roundtrips.
+            </p>
+
+            <p>
+                It's worth noting that these benchmarks were run against a SQL Server instance running on my local
+                machine, but it's important to keep in mind that when benchmarking, one should generally never do when
+                benchmarking. In a production environment, the latency of the database will play an important role in
+                the overall performance of the application, and therefore, it's important to benchmark on a similar
+                environment.
+            </p>
+
+            <p>
+                In conclusion, the optimizations introduced in EF Core 7 are a welcome addition for .NET developers. The
+                reduction in transactions and roundtrips can result in significant performance improvements, especially
+                in scenarios where a single statement is involved
             </p>
 
             <div class="text-component__block text-component__block--outset">
