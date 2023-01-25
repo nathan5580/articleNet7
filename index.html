@@ -408,42 +408,66 @@
             </div>
 
             <p>
-                In our experience with our client, upgrading their application from an older version of .NET to the
-                latest version was a smooth process. The first step was to assess the current codebase and identify any
-                potential issues that might arise during the upgrade. We then developed a comprehensive plan for the
-                upgrade, including testing and deployment strategies.
+                In our experience, migrating to .NET 7 presented a number of challenges. We encountered breaking changes
+                in some libraries that we were using, which required us to rewrite certain EF7 methods and eliminate the
+                use of external libraries. This process was time-consuming and required a significant amount of effort
+                to ensure that all dependencies were updated and that the application was still functional.
             </p>
 
             <p>
-                The actual upgrade process was relatively
-                straightforward, as the majority of the code was able to be seamlessly ported to the new version. We did
-                encounter a few areas of the code that required some modification, but these were relatively minor and
-                easily resolved.
+                We also had to migrate part of our old architecture under Microsoft Orleans, which we no longer deemed
+                suitable for our needs. This required us to rethink our architecture, design new workflows, and
+                implement new functionalities. Despite the additional effort required, we were able to adapt the old
+                architecture to the new and gain performance doing so. This allowed us to take advantage of new
+                capabilities offered by .NET 7 and improve the overall performance of our application.
+            </p>
+
+            <figure class="text-component__block text-component__block--outset text-component__block--right">
+                <img style="height: 150px;width: 150px"
+                     src="assets/img/orleans.png"
+                     alt="MS Orleans"/>
+                <figcaption>MS Orleans</figcaption>
+            </figure>
+
+            <p>
+                The transition to EF7 brought another challenge as we had to adapt to the changes in Entity Framework's
+                handling of Database First. This included creating T4 templates for reverse engineering the database,
+                which required us to learn and implement new tools, adding an extra layer of complexity to the migration
+                process.
+            </p>
+
+            <figure class="text-component__block text-component__block--outset text-component__block--right">
+                <img src="assets/img/t4.png"
+                     alt="T4"/>
+                <figcaption>T4</figcaption>
+            </figure>
+
+            <p>
+                Despite these challenges, we also encountered a number of benefits. We saw a significant increase in
+                overall performance, as well as a reduction in memory and CPU usage. This was particularly evident in
+                our data-intensive tasks, which required the use of Entity Framework. The new version of EF7 offered
+                better performance, which translated into faster response times for our clients.
             </p>
 
             <p>
-                Overall, the upgrade was completed on time and within budget, and the client is now
-                able to take advantage of the latest features and performance improvements in the .NET framework.
+                We also saw a reduction in the delay of EF7 requests, which was a major improvement for our clients who
+                rely on our application for their daily operations. Additionally, we were able to reduce the use of
+                transactions when they were not necessary, which resulted in a reduction of the load on our database and
+                improved the overall performance of our application.
             </p>
 
             <p>
-                During the implementation of the .NET version upgrade, we faced a few challenges, but overall the
-                process was successful. One of the biggest challenges we faced was dealing with breaking changes in the
-                new version of the framework. These breaking changes often required us to rewrite certain parts of the
-                code, which added some additional time and effort to the upgrade process. However, we were able to
-                mitigate this by thoroughly testing the code before and after the upgrade, which helped us identify and
-                resolve any issues quickly.
+                Additionally, we took advantage of this major update to upgrade our database from SQL Server 2017 to SQL
+                Server 2019, and implemented Always Encrypted and Transparent Data Encryption for better data security
+                for our client. This allowed us to comply with industry standards and regulations and ensured the
+                protection of our client's sensitive data.
+            </p>
 
-                On the other hand, the benefits of upgrading to the latest version of .NET were significant. The
-                client's application was able to take advantage of the latest features and performance improvements in
-                the framework, which has resulted in a faster, more stable and more secure application. Additionally,
-                the client's development team was able to start using new features and capabilities that were not
-                available in the previous version of the framework.
-
-                Overall, while the process of upgrading to a new version of .NET can be challenging, the benefits of
-                doing so far outweigh the challenges. With a thorough plan in place and a commitment to testing and
-                quality, it is possible to successfully upgrade an application to the latest version of the framework,
-                while delivering significant benefits to the client.
+            <p>
+                We were able to successfully navigate the migration process thanks to the thorough testing and quality
+                assurance measures in place. The use of unit tests and multiple testing sessions with our client allowed
+                us to identify and address any potential issues and breaking changes. This approach enabled us to ensure
+                the perfect functionality of our application and identify areas for improvement in the codebase.
             </p>
 
             <div class="text-component__block text-component__block--outset">
@@ -453,7 +477,12 @@
             </div>
 
             <p>
-                TODO
+                In conclusion, migrating to .NET 7 presented a number of challenges for our team. However, these
+                challenges were
+                outweighed by the significant benefits we saw in terms of performance, scalability, and security. Our
+                clients also saw improvements in response times and data security. Despite the effort required, the
+                migration allowed us to take advantage of new capabilities offered by .NET 7 and improve the overall
+                performance of our application, providing a better service for our clients.
             </p>
 
             <div class="text-component__block text-component__block--outset">
@@ -472,6 +501,18 @@
                         target="_blank">link</a></li>
                 <li>Microsoft official .Net 7 breaking changes <a
                         href="https://learn.microsoft.com/en-us/dotnet/core/compatibility/7.0" target="_blank">link</a>
+                </li>
+                <li>SQL Server AE <a
+                        href="https://learn.microsoft.com/fr-fr/sql/relational-databases/security/encryption/always-encrypted-database-engine?view=sql-server-ver16"
+                        target="_blank">link</a>
+                </li>
+                <li>SQL Server TDE <a
+                        href="https://learn.microsoft.com/fr-fr/azure/azure-sql/database/transparent-data-encryption-tde-overview?view=azuresql&viewFallbackFrom=sql-server-ver16&tabs=azure-portal"
+                        target="_blank">link</a>
+                </li>
+                <li>T4 template <a
+                        href="https://learn.microsoft.com/fr-fr/visualstudio/modeling/code-generation-and-t4-text-templates?view=vs-2022"
+                        target="_blank">link</a>
                 </li>
             </ul>
         </div>
