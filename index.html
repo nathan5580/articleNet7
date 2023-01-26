@@ -418,7 +418,7 @@
                 architecture to the new and gain performance doing so. This allowed us to take advantage of new
                 capabilities offered by .NET 7 and improve the overall performance of our application.
             </p>
-
+            
             <figure class="text-component__block text-component__block--outset text-component__block--right">
                 <img style="height: 150px;width: 150px"
                      src="assets/img/orleans.png"
@@ -433,18 +433,23 @@
                 process.
             </p>
 
-            <figure class="text-component__block text-component__block--outset text-component__block--right">
-                <img src="assets/img/t4.png"
-                     alt="T4"/>
-                <figcaption>T4</figcaption>
-            </figure>
-
             <p>
                 Despite these challenges, we also encountered a number of benefits. We saw a significant increase in
                 overall performance, as well as a reduction in memory and CPU usage. This was particularly evident in
                 our data-intensive tasks, which required the use of Entity Framework. The new version of EF7 offered
                 better performance, which translated into faster response times for our clients.
             </p>
+
+            <figure class="text-component__block text-component__block--outset text-component__block--right">
+                <img
+                        src="assets/img/bench.png"
+                        alt="Benchmark"/>
+                <figcaption>Benchmark</figcaption>
+            </figure>
+            
+            <blockquote>
+                Look at the ratio column above, speed savings up to 98% 💪🏻
+            </blockquote>
 
             <p>
                 We also saw a reduction in the delay of EF7 requests, which was a major improvement for our clients who
@@ -509,6 +514,10 @@
                 </li>
                 <li>
                     <a href="https://learn.microsoft.com/fr-fr/visualstudio/modeling/code-generation-and-t4-text-templates?view=vs-2022"
+                       target="_blank">T4 template</a>
+                </li>
+                <li>
+                    <a href="https://www.eqengineered.com/insights/microsoft-dotnetcon-2022"
                        target="_blank">T4 template</a>
                 </li>
             </ul>
